@@ -7,36 +7,6 @@
 @initialtime:  16/2/20 00:05 PM
 @completetime: 26/2/20 04:00 PM
 '''
-# log
-'''
-@version: v1.10-202003072130
-@modification:
-    __init__(three parameters,dictionary);
-    likelihood(data);
-    inf_gibbs_sampling增加参数phi;
-    likelihood增加参数theta和phi;
-    plt_likelihood()区分训练与测试
-@version: v1.20-202003082000
-@modification: 
-    docs_time的格式为:day1-day2-……-groupid-drivedate-destination, N需减3;
-    inf_init和gibbs_sampling_for_t采样多次t，根据成员人数确定——后证明此策略无效，会让k-t分布趋近于一种t主导;
-    time的推断采取先取最高概率topic，再取对应topic最高概率time的策略;
-    将get_doc_topic和inf_doc_topic中保存csv的功能转移到类外，同时增加self.docs_time和self.new_docs_time的出发日期和目的地列;
-    inf_estimate中增加参数newtime,模型训练时需要从外部传入time_test;
-    采用了新的time预测方式：max_inf_doc_time()
-@version: v1.21-202003092000
-@modification:
-    增加函数top2_inf_doc_time(self)，用于计算HitRatio@T=2
-@version: v1.22-202003102000
-@modification:
-    增加函数inf_doc_topic(self)，time数据中增加members列
-@version: v1.23-202003111120
-@modification:
-    avg_kl计算中，多乘了系数2，删除
-@version: v1.31-202003131900
-@modification:
-    增加函数inf_gibbs_sampling_for_t，使得模型测试过程中依然可以使用t的信息
-'''
 
 import random
 import numpy as np
